@@ -1,0 +1,25 @@
+# Operating system and editor files.
+.DS_Store
+._*
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment files; keep shareable examples.
+.env
+.env.*
+!.env.example
+!.env.dist
+
+# Development dependencies.
+/node_modules/
+/vendor/
+
+# Logs, test caches, and release archives.
+*.log
+*.zip
+/coverage/
+/.phpunit.cache/
+/.phpunit.result.cache
+/.phpcs-cache
