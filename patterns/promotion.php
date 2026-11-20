@@ -3,6 +3,8 @@
  * Title: Seasonal collection promotion
  * Slug: wooblocks/promotion
  * Categories: wooblocks
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

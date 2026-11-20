@@ -40,6 +40,34 @@ The source's newsletter, wishlist, quick view, recently viewed products, and ani
 
 ## Validation And Launch Checks
 
+### Automated Checks
+
+Development tools require Composer 2, PHP 7.4 or later, and Node 24.15 or later (or a supported Node version listed in package.json). From the theme repository:
+
+```sh
+composer install
+npm ci
+composer lint
+npm run lint
+```
+
+Commit both lockfiles whenever dependencies change. CI uses `composer install` and `npm ci` to install locked dependencies. `composer lint:fix`, `npm run lint:css -- --fix`, and `npm run lint:js -- --fix` apply mechanical corrections; review their diffs before committing.
+
+PHP_CodeSniffer runs the full WordPress standard over theme PHP. JavaScript and CSS use `@wordpress/scripts`; JavaScript checks include development scripts and automatically discover future theme source. An explicit message reports when no theme JavaScript exists. CSS permits WordPress/WooCommerce-owned class names without exempting theme classes. JSON validation downloads the WordPress 6.7 schema and fails on download, parsing, or validation errors.
+
+The Theme Checks workflow runs on every pull request and push, and can be run manually. It checks PHP syntax on 7.4 and 8.3, standards on PHP 8.3, and Theme Check 20260901 on WordPress 6.7 and the stable release resolved at runtime (`latest`). Theme Check runs against a source-only theme copy in a disposable installation with no WooCommerce dependency; it does not use or change the Local site. Its native exit status gates CI, with advisory output retained in job logs. Tooling and dependency directories are not part of the checked runtime theme.
+
+To run the same Theme Check manually in a separate disposable WordPress installation with the theme present:
+
+```sh
+wp plugin install theme-check --version=20260901 --activate
+wp theme-check run wooblocks
+```
+
+After connecting this repository to GitHub and obtaining the first workflow result, protect the default and release branches using a ruleset or branch protection: require pull requests, require the **Automated Checks** status, require branches to be up to date, and prohibit bypasses. The aggregate status fails if any constituent job fails, is cancelled, or is skipped. Protect release tags separately and make any future release/deployment workflow depend on successful checks for the exact commit. This repository currently has no release workflow; adding CI alone does not enforce merging or publication.
+
+Automated checks are not functional tests or proof of full cross-version compatibility. They do not replace the launch checks below.
+
 Offline validation can check PHP syntax, theme JSON, block comment structure, pattern references, dependency guards, safe URLs, and native template composition. This does not prove Gutenberg save/serialize validity or successful shopping behavior.
 
 With WooCommerce installed, verify the following before launch:

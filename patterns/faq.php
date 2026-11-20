@@ -3,6 +3,8 @@
  * Title: Shopping questions
  * Slug: wooblocks/faq
  * Categories: wooblocks
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

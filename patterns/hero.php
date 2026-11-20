@@ -4,6 +4,8 @@
  * Slug: wooblocks/hero
  * Categories: wooblocks, featured
  * Viewport Width: 1440
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

@@ -15,7 +15,7 @@ body {
 }
 
 :where(a, button, input, select, textarea, summary):focus-visible {
-	outline: 3px solid currentColor;
+	outline: 3px solid currentcolor;
 	outline-offset: 4px;
 }
 
@@ -25,6 +25,14 @@ body {
 
 :where(a, button, input, select, textarea) {
 	touch-action: manipulation;
+}
+
+.wooblocks-story .wp-block-cover {
+	background: var(--wp--preset--color--petrol);
+}
+
+.wc-block-mini-cart__drawer a {
+	color: var(--wp--preset--color--rust);
 }
 
 .wp-site-blocks > header,
@@ -147,10 +155,6 @@ body {
 	padding-block: 4rem;
 }
 
-.wooblocks-story .wp-block-cover {
-	background: var(--wp--preset--color--petrol);
-}
-
 .wooblocks-promotion {
 	padding: 4rem 1.25rem;
 	background: var(--wp--preset--color--rust);
@@ -167,8 +171,8 @@ body {
 	padding-block: 4rem 1rem;
 }
 
-.wooblocks-footer .wp-block-column,
-.wp-block-column {
+.wp-block-column,
+.wooblocks-footer .wp-block-column {
 	min-width: 0;
 }
 
@@ -256,10 +260,6 @@ body {
 	background: var(--wp--preset--color--cream);
 }
 
-.wc-block-mini-cart__drawer a {
-	color: var(--wp--preset--color--rust);
-}
-
 .woocommerce table.shop_table {
 	border-color: var(--wooblocks-border);
 }
@@ -275,6 +275,7 @@ body {
 }
 
 @media (max-width: 960px) {
+
 	.wooblocks-hero-title {
 		font-size: 5rem;
 	}
@@ -285,6 +286,7 @@ body {
 }
 
 @media (max-width: 600px) {
+
 	.wooblocks-header-row {
 		gap: 1rem;
 	}
@@ -322,6 +324,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
 	html {
 		scroll-behavior: auto;
 	}

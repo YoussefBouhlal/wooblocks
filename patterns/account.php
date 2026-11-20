@@ -4,6 +4,8 @@
  * Slug: wooblocks/account
  * Categories: wooblocks
  * Inserter: no
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

@@ -3,6 +3,8 @@
  * Title: New arrivals
  * Slug: wooblocks/new-arrivals
  * Categories: wooblocks
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

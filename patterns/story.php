@@ -3,6 +3,8 @@
  * Title: Editorial story
  * Slug: wooblocks/story
  * Categories: wooblocks
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

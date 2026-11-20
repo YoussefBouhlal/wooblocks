@@ -3,6 +3,8 @@
  * Title: Shop by department
  * Slug: wooblocks/categories
  * Categories: wooblocks
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;

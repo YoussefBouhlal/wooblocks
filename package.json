@@ -1,0 +1,16 @@
+{
+  "name": "wooblocks-theme",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "^22.22.2 || ^24.15.0 || >=26.0.0" },
+  "scripts": {
+    "lint:js": "node tools/lint-js.cjs",
+    "lint:css": "wp-scripts lint-style \"**/*.{css,scss}\"",
+    "lint:json": "node tools/validate-theme.cjs",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:json"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "37.2.0",
+    "ajv": "^8.17.1"
+  }
+}

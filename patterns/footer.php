@@ -5,6 +5,8 @@
  * Categories: wooblocks
  * Block Types: core/template-part/footer
  * Inserter: no
+ *
+ * @package WooBlocks
  */
 
 defined( 'ABSPATH' ) || exit;
