@@ -57,6 +57,8 @@ PHP_CodeSniffer runs the full WordPress standard over theme PHP. JavaScript and 
 
 The Theme Checks workflow runs on every pull request and push, and can be run manually. It checks PHP syntax on 7.4 and 8.3, standards on PHP 8.3, and Theme Check 20260901 on WordPress 6.7 and the stable release resolved at runtime (`latest`). Theme Check runs against a source-only theme copy in a disposable installation with no WooCommerce dependency; it does not use or change the Local site. Its native exit status gates CI, with advisory output retained in job logs. Tooling and dependency directories are not part of the checked runtime theme.
 
+The CI theme copy includes readme.txt (license and copyright information) and screenshot.png (a genuine 1200 x 900 homepage capture). Keep these distribution files in the copy when changing the workflow; Theme Check requires them as well as the Author header in style.css. Update the screenshot when the theme's appearance changes.
+
 To run the same Theme Check manually in a separate disposable WordPress installation with the theme present:
 
 ```sh
