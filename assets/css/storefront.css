@@ -241,7 +241,8 @@ body {
 }
 
 .woocommerce :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea),
-.wc-block-components-form :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+.wc-block-components-form :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+.wp-block-post-comments-form :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea) {
 	color: var(--wp--preset--color--midnight);
 	background-color: var(--wp--preset--color--cream);
 	border-radius: 4px;
