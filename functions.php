@@ -40,20 +40,6 @@ function wooblocks_register_pattern_category() {
 add_action( 'init', 'wooblocks_register_pattern_category' );
 
 /**
- * Explain the optional commerce dependency without installing it.
- */
-function wooblocks_dependency_notice() {
-	if ( class_exists( 'WooCommerce' ) || ! current_user_can( 'edit_theme_options' ) ) {
-		return;
-	}
-	printf(
-		'<div class="notice notice-info"><p>%s</p></div>',
-		esc_html__( 'WooBlocks is ready for editing. Install and configure WooCommerce to enable the catalog, product pages, cart, checkout, and customer accounts. The theme does not install plugins or change store settings.', 'wooblocks' )
-	);
-}
-add_action( 'admin_notices', 'wooblocks_dependency_notice' );
-
-/**
  * Resolve the configured shop without assuming a permalink structure.
  *
  * @return string Shop URL, or the homepage before store setup.

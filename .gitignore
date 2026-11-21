@@ -17,6 +17,9 @@
 /vendor/
 /.cache/
 
+# Local production-readiness checklist.
+/PRODUCTION-TODO.md
+
 # Logs, test caches, and release archives.
 *.log
 *.zip

@@ -35,3 +35,11 @@ _Avoid_: Cart
 **Order confirmation**:
 The outcome shown to the customer after an order is placed. It is not, by itself, proof that payment has settled.
 _Avoid_: Payment receipt
+
+**Post discussion**:
+The comments and replies associated with a blog post, distinct from reviews of a product.
+_Avoid_: Product reviews
+
+**Closed discussion**:
+A post discussion that no longer accepts new comments or replies. Its existing comments remain part of the discussion.
+_Avoid_: Deleted discussion, hidden discussion
