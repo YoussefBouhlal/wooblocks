@@ -32,10 +32,24 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
-		<!-- wp:navigation {"overlayMenu":"mobile","openSubmenusOnClick":true,"ariaLabel":"<?php echo esc_attr__( 'Main navigation', 'wooblocks' ); ?>","layout":{"type":"flex","justifyContent":"center"}} -->
+		<!-- wp:navigation
+		<?php
+		echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
+			array(
+				'overlayMenu'         => 'mobile',
+				'openSubmenusOnClick' => true,
+				'ariaLabel'           => __( 'Main navigation', 'wooblocks' ),
+				'layout'              => array(
+					'type'           => 'flex',
+					'justifyContent' => 'center',
+				),
+			)
+		);
+		?>
+		-->
 			<!-- wp:navigation-link
 			<?php
-			echo wp_json_encode(
+			echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 				array(
 					'label' => __( 'Home', 'wooblocks' ),
 					'url'   => home_url( '/' ),
@@ -47,7 +61,7 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 			<!-- wp:navigation-submenu
 				<?php
-				echo wp_json_encode(
+				echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 					array(
 						'label' => __( 'Shop', 'wooblocks' ),
 						'url'   => wooblocks_shop_url(),
@@ -58,7 +72,7 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 										-->
 				<!-- wp:navigation-link
 				<?php
-				echo wp_json_encode(
+				echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 					array(
 						'label' => __( 'Shop all', 'wooblocks' ),
 						'url'   => wooblocks_shop_url(),
@@ -89,7 +103,7 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 				<?php if ( function_exists( 'wc_get_page_id' ) && function_exists( 'wc_get_page_permalink' ) && 0 < wc_get_page_id( 'myaccount' ) ) : ?>
 			<!-- wp:navigation-link
 					<?php
-					echo wp_json_encode(
+					echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 						array(
 							'label' => __( 'My account', 'wooblocks' ),
 							'url'   => wc_get_page_permalink( 'myaccount' ),
@@ -103,7 +117,21 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 		<!-- /wp:navigation -->
 		<!-- wp:group {"className":"wooblocks-header-actions","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group wooblocks-header-actions">
-			<!-- wp:search {"label":"<?php echo esc_attr__( 'Search', 'wooblocks' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Search', 'wooblocks' ); ?>","buttonText":"<?php echo esc_attr__( 'Search', 'wooblocks' ); ?>","buttonUseIcon":true,"buttonPosition":"button-inside","query":<?php echo wp_json_encode( class_exists( 'WooCommerce' ) ? array( 'post_type' => 'product' ) : new stdClass() ); ?>} /-->
+			<!-- wp:search
+			<?php
+			echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
+				array(
+					'label'          => __( 'Search', 'wooblocks' ),
+					'showLabel'      => false,
+					'placeholder'    => __( 'Search', 'wooblocks' ),
+					'buttonText'     => __( 'Search', 'wooblocks' ),
+					'buttonUseIcon'  => true,
+					'buttonPosition' => 'button-inside',
+					'query'          => class_exists( 'WooCommerce' ) ? array( 'post_type' => 'product' ) : new stdClass(),
+				)
+			);
+			?>
+			/-->
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 			<!-- wp:woocommerce/mini-cart {"miniCartIcon":"bag","addToCartBehaviour":"open_drawer"} /-->
 			<?php endif; ?>
