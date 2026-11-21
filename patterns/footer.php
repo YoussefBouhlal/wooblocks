@@ -24,7 +24,20 @@ defined( 'ABSPATH' ) || exit;
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:heading {"level":3} --><h3 class="wp-block-heading"><?php esc_html_e( 'Explore', 'wooblocks' ); ?></h3><!-- /wp:heading -->
-			<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"<?php echo esc_attr__( 'Footer navigation', 'wooblocks' ); ?>","layout":{"type":"flex","orientation":"vertical"}} -->
+			<!-- wp:navigation
+			<?php
+			echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
+				array(
+					'overlayMenu' => 'never',
+					'ariaLabel'   => __( 'Footer navigation', 'wooblocks' ),
+					'layout'      => array(
+						'type'        => 'flex',
+						'orientation' => 'vertical',
+					),
+				)
+			);
+			?>
+			-->
 				<!-- wp:page-list /-->
 			<!-- /wp:navigation -->
 		</div>
