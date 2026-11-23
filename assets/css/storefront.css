@@ -14,7 +14,8 @@ body {
 	box-sizing: border-box;
 }
 
-:where(a, button, input, select, textarea, summary):focus-visible {
+:where(a, button, input, select, textarea, summary):focus-visible,
+.wc-block-components-radio-control .wc-block-components-radio-control__input:focus-visible {
 	outline: 3px solid var(--wp--preset--color--cream);
 	outline-offset: 4px;
 	box-shadow: 0 0 0 4px var(--wp--preset--color--midnight);
@@ -249,6 +250,25 @@ body {
 	color: var(--wp--preset--color--flame);
 }
 
+.woocommerce span.onsale {
+	color: var(--wp--preset--color--cream);
+	background-color: var(--wp--preset--color--rust);
+}
+
+.wc-block-components-validation-error {
+	color: var(--wp--preset--color--flame);
+}
+
+.wc-block-mini-cart__drawer .wc-block-components-validation-error {
+	color: var(--wp--preset--color--rust);
+}
+
+.wc-block-components-text-input label,
+.wc-block-components-form .wc-block-components-text-input label,
+.wc-blocks-components-select__container {
+	color: var(--wp--preset--color--midnight);
+}
+
 .woocommerce :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea),
 .wc-block-components-form :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
 .wc-block-mini-cart__drawer :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea),
@@ -263,6 +283,10 @@ body {
 :where(.woocommerce, .wc-block-components-form, .wc-block-mini-cart__drawer, .wp-block-post-comments-form, .wp-block-search) :where(input, textarea)::placeholder {
 	color: var(--wp--preset--color--midnight);
 	opacity: 1;
+}
+
+.woocommerce div.product form.cart .variations select {
+	background-color: var(--wp--preset--color--cream);
 }
 
 .woocommerce :where(button.button, a.button, input.button),
