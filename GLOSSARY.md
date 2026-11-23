@@ -16,6 +16,10 @@ _Avoid_: Store name, merchant branding
 The existing shopping experience used as the visual reference for WooBlocks.
 _Avoid_: Parent theme
 
+**Shipped defaults**:
+The storefront appearance supplied by WooBlocks before a merchant customizes it, distinct from their saved design choices.
+_Avoid_: Merchant styling, customized storefront
+
 **Editorial section**:
 A curated presentation of imagery and copy, such as a seasonal story or collection promotion. Its promotional claims do not establish actual prices or discounts.
 _Avoid_: Discount rule, product record

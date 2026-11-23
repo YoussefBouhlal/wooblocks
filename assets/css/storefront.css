@@ -15,8 +15,9 @@ body {
 }
 
 :where(a, button, input, select, textarea, summary):focus-visible {
-	outline: 3px solid currentcolor;
+	outline: 3px solid var(--wp--preset--color--cream);
 	outline-offset: 4px;
+	box-shadow: 0 0 0 4px var(--wp--preset--color--midnight);
 }
 
 :where(h1, h2, h3, p, a, button) {
@@ -31,7 +32,7 @@ body {
 	background: var(--wp--preset--color--petrol);
 }
 
-.wc-block-mini-cart__drawer a {
+.wc-block-mini-cart__drawer :where(a:not(.wp-element-button):not(.wc-block-components-button):not(.button)) {
 	color: var(--wp--preset--color--rust);
 }
 
@@ -63,6 +64,10 @@ body {
 
 .wooblocks-wordmark a {
 	color: var(--wp--preset--color--rust);
+}
+
+.wooblocks-header a:where(:hover, :focus-visible) {
+	text-decoration: underline;
 }
 
 .wooblocks-header-actions {
@@ -231,6 +236,10 @@ body {
 	text-decoration: none;
 }
 
+.wp-block-woocommerce-product-collection .wp-block-post-title a:where(:hover, :focus-visible) {
+	text-decoration: underline;
+}
+
 .wp-block-woocommerce-product-image img {
 	aspect-ratio: 3 / 4;
 	object-fit: cover;
@@ -242,11 +251,18 @@ body {
 
 .woocommerce :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea),
 .wc-block-components-form :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+.wc-block-mini-cart__drawer :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea),
 .wp-block-post-comments-form :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea) {
 	color: var(--wp--preset--color--midnight);
 	background-color: var(--wp--preset--color--cream);
+	border: 1px solid var(--wp--preset--color--midnight);
 	border-radius: 4px;
 	max-width: 100%;
+}
+
+:where(.woocommerce, .wc-block-components-form, .wc-block-mini-cart__drawer, .wp-block-post-comments-form, .wp-block-search) :where(input, textarea)::placeholder {
+	color: var(--wp--preset--color--midnight);
+	opacity: 1;
 }
 
 .woocommerce :where(button.button, a.button, input.button),
@@ -273,6 +289,11 @@ body {
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
 	background: var(--wp--preset--color--cream);
 	color: var(--wp--preset--color--midnight);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+	color: inherit;
 }
 
 @media (max-width: 960px) {
