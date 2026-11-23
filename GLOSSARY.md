@@ -4,6 +4,14 @@ The WooBlocks fashion storefront. This vocabulary distinguishes editorial presen
 
 ## Language
 
+**Site identity**:
+The merchant's configured site title and optional logo, representing their store rather than the theme.
+_Avoid_: Theme identity, WooBlocks wordmark
+
+**Theme identity**:
+The WooBlocks name identifying the theme, distinct from the merchant's site identity.
+_Avoid_: Store name, merchant branding
+
 **Source storefront**:
 The existing shopping experience used as the visual reference for WooBlocks.
 _Avoid_: Parent theme

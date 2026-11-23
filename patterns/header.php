@@ -27,9 +27,7 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group">
 			<!-- wp:site-logo {"width":48,"shouldSyncIcon":false} /-->
-			<!-- wp:paragraph {"className":"wooblocks-wordmark","fontFamily":"display"} -->
-			<p class="wooblocks-wordmark has-display-font-family"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">WooBlocks</a></p>
-			<!-- /wp:paragraph -->
+			<!-- wp:site-title {"level":0,"className":"wooblocks-wordmark","style":{"typography":{"fontSize":"2.5rem"}},"fontFamily":"display"} /-->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:navigation

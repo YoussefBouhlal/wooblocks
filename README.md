@@ -1,6 +1,6 @@
 # WooBlocks
 
-A standalone WordPress block theme for an editorial fashion storefront, branded WooBlocks throughout.
+A standalone WordPress block theme for an editorial fashion storefront, with merchant-configurable header identity.
 
 ## Requirements
 
@@ -17,8 +17,10 @@ The theme can be edited without WooCommerce. Commerce is unavailable until that 
 3. Assign the **Commerce page** template to Cart and Checkout for a wide layout. This works with custom page slugs and translated page names. The template renders existing page content; it does not create a second cart or checkout. It also preserves checkout endpoints, including order payment and order received.
 4. Keep the My account page's WooCommerce content and assign Commerce page, or assign **Customer account** to render WooCommerce's account shortcode from the template. Do not insert an additional account shortcode when using Customer account. WooCommerce handles sign-in, registration settings, orders, addresses, and account endpoints.
 5. Open Appearance > Editor > Templates > Front Page. This template takes precedence over static front-page content; edit it in the Site Editor. The blog continues to use the index template when assigned a separate posts page.
-6. Edit the header and footer template parts. Set the logo, customize the WooBlocks wordmarks if desired, and save the Navigation block. Its starter Shop submenu includes up to six populated top-level product categories available when the pattern is first resolved. Saved menus are editor-owned snapshots, not continuously synchronized category lists.
+6. Set the Site Title under Settings > General, then edit the header and footer template parts. Add an optional Site Logo, customize the footer content, and save the Navigation block. Its starter Shop submenu includes up to six populated top-level product categories available when the pattern is first resolved. Saved menus are editor-owned snapshots, not continuously synchronized category lists.
 7. Replace the footer Page List with selected Navigation links before launch if not every published page belongs in the footer. Add real policy and contact pages; the theme does not invent them.
+
+The default header displays the Site Title alongside the optional Site Logo, linking both to the homepage. An unset logo adds no visible placeholder; a blank Site Title adds no fallback text. WooBlocks remains the theme name, not the merchant's default wordmark. Saved Site Editor header customizations override theme-file defaults and are not reset by theme updates; existing customized headers may need their fixed wordmark replaced manually with a Site Title block.
 
 No pages, products, settings, menu records, coupons, or users are created by this theme. There are no activation migrations or external network requests in theme code.
 
@@ -29,6 +31,8 @@ Editorial photography is not bundled. Hero, department, and story sections use e
 The source fonts are Anton, Archivo, and Pinyon Script. Their files are not bundled. The theme declares matching font stacks with local fallbacks and makes no Google Fonts requests. To match the reference, add appropriately licensed font files through Styles > Typography > Font Library and assign them to headings, body text, and script accents. Uploading fonts is a separate site-editing action.
 
 ## Editable Storefront
+
+Default 404, general-search, and publishing empty-state messages use the theme's `wooblocks` translation domain, including search-form labels. Search-result headings supplied by WordPress and commerce text supplied by WooCommerce retain their own translations. Saved Site Editor templates override theme defaults and are not migrated or reset; previously saved templates may retain their original English text.
 
 The WooBlocks pattern category contains the hero, departments, new arrivals, editorial story, seasonal promotion, and shopping FAQ. Product collections use real catalog data; the new-arrivals collection orders by publication date. Department links use existing `men`, `women`, and `kids` categories when present, otherwise the configured Shop URL. Review these links after category changes. Links resolve to the homepage before a Shop page is configured.
 

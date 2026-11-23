@@ -2,7 +2,7 @@
 <!-- wp:group {"tagName":"main","anchor":"main-content","className":"wooblocks-main","layout":{"type":"constrained"}} -->
 <main id="main-content" class="wp-block-group wooblocks-main">
 	<!-- wp:query-title {"type":"search"} /-->
-	<!-- wp:search {"label":"Search","showLabel":true,"buttonText":"Search","buttonUseIcon":true} /-->
+	<!-- wp:pattern {"slug":"wooblocks/search-form"} /-->
 	<!-- wp:query {"query":{"perPage":12,"inherit":true},"align":"wide"} -->
 	<div class="wp-block-query alignwide">
 		<!-- wp:post-template -->
@@ -15,7 +15,7 @@
 			<!-- wp:query-pagination-next /-->
 		<!-- /wp:query-pagination -->
 		<!-- wp:query-no-results -->
-			<!-- wp:paragraph --><p>No results found. Try another search.</p><!-- /wp:paragraph -->
+			<!-- wp:pattern {"slug":"wooblocks/search-no-results"} /-->
 		<!-- /wp:query-no-results -->
 	</div>
 	<!-- /wp:query -->
