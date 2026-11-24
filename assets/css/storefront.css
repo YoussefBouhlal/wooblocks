@@ -14,8 +14,13 @@ body {
 	box-sizing: border-box;
 }
 
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close {
+	margin: 0;
+}
+
 :where(a, button, input, select, textarea, summary):focus-visible,
-.wc-block-components-radio-control .wc-block-components-radio-control__input:focus-visible {
+.wc-block-components-radio-control .wc-block-components-radio-control__input:focus-visible,
+.wc-block-mini-cart__drawer .wc-block-components-drawer__close:focus-visible {
 	outline: 3px solid var(--wp--preset--color--cream);
 	outline-offset: 4px;
 	box-shadow: 0 0 0 4px var(--wp--preset--color--midnight);

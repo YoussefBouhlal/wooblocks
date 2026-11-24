@@ -32,6 +32,19 @@ function wooblocks_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'wooblocks_enqueue_styles' );
 
 /**
+ * Recover focus around native WooCommerce cart drawer updates.
+ */
+function wooblocks_enqueue_cart_focus() {
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+
+	$theme = wp_get_theme( get_template() );
+	wp_enqueue_script( 'wooblocks-cart-focus', get_template_directory_uri() . '/assets/js/cart-focus.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
+}
+add_action( 'wp_enqueue_scripts', 'wooblocks_enqueue_cart_focus' );
+
+/**
  * Make the main landmark focusable by the native skip link.
  *
  * @param string $block_content Rendered block markup.
