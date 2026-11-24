@@ -32,6 +32,47 @@ function wooblocks_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'wooblocks_enqueue_styles' );
 
 /**
+ * Make the main landmark focusable by the native skip link.
+ *
+ * @param string $block_content Rendered block markup.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function wooblocks_skip_link_target( $block_content, $block ) {
+	if ( 'main' !== ( $block['attrs']['tagName'] ?? '' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+	if ( $processor->next_tag( 'MAIN' ) && null === $processor->get_attribute( 'tabindex' ) ) {
+		$processor->set_attribute( 'tabindex', '-1' );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/group', 'wooblocks_skip_link_target', 10, 2 );
+
+/**
+ * Render account shortcodes introduced after template shortcode processing.
+ *
+ * @param string $block_content Rendered block markup.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function wooblocks_render_account_shortcode( $block_content, $block ) {
+	if ( '[woocommerce_my_account]' !== trim( $block['innerHTML'] ?? '' ) ) {
+		return $block_content;
+	}
+
+	if ( ! shortcode_exists( 'woocommerce_my_account' ) ) {
+		return '';
+	}
+
+	return do_shortcode( '[woocommerce_my_account]' );
+}
+add_filter( 'render_block_core/shortcode', 'wooblocks_render_account_shortcode', 10, 2 );
+
+/**
  * Group the editable storefront patterns.
  */
 function wooblocks_register_pattern_category() {
