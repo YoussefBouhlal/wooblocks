@@ -20,6 +20,14 @@ _Avoid_: Parent theme
 The storefront appearance supplied by WooBlocks before a merchant customizes it, distinct from their saved design choices.
 _Avoid_: Merchant styling, customized storefront
 
+**Shipped template**:
+A page layout supplied by WooBlocks before a merchant customizes it.
+_Avoid_: Saved template, merchant layout
+
+**Saved template**:
+A merchant-saved page layout that overrides its shipped template.
+_Avoid_: Shipped template, theme default
+
 **Editorial section**:
 A curated presentation of imagery and copy, such as a seasonal story or collection promotion. Its promotional claims do not establish actual prices or discounts.
 _Avoid_: Discount rule, product record
