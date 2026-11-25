@@ -32,7 +32,7 @@ function wooblocks_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'wooblocks_enqueue_styles' );
 
 /**
- * Recover focus around native WooCommerce cart drawer updates.
+ * Load native WooCommerce accessibility compatibility fixes.
  */
 function wooblocks_enqueue_cart_focus() {
 	if ( ! class_exists( 'WooCommerce' ) ) {
@@ -41,6 +41,12 @@ function wooblocks_enqueue_cart_focus() {
 
 	$theme = wp_get_theme( get_template() );
 	wp_enqueue_script( 'wooblocks-cart-focus', get_template_directory_uri() . '/assets/js/cart-focus.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
+	if ( is_product() ) {
+		wp_enqueue_script( 'wooblocks-quantity-labels', get_template_directory_uri() . '/assets/js/quantity-labels.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
+	}
+	if ( is_checkout() ) {
+		wp_enqueue_script( 'wooblocks-payment-accessibility', get_template_directory_uri() . '/assets/js/payment-accessibility.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'wooblocks_enqueue_cart_focus' );
 

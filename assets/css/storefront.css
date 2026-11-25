@@ -294,6 +294,11 @@ body {
 	background-color: var(--wp--preset--color--cream);
 }
 
+.woocommerce div.product form.cart .quantity .wooblocks-quantity-label {
+	display: block;
+	margin-block-end: 0.5rem;
+}
+
 .woocommerce :where(button.button, a.button, input.button),
 .wc-block-components-button:not(.is-link) {
 	background: var(--wp--preset--color--rust);
