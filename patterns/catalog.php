@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 	<!-- wp:group {"className":"wooblocks-catalog-toolbar","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 	<div class="wp-block-group wooblocks-catalog-toolbar">
 		<!-- wp:woocommerce/product-results-count /-->
-		<!-- wp:woocommerce/catalog-sorting /-->
+		<!-- wp:woocommerce/catalog-sorting {"useLabel":true} /-->
 	</div>
 	<!-- /wp:group -->
 	<!-- wp:woocommerce/product-template -->

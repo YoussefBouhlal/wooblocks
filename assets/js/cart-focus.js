@@ -7,6 +7,8 @@
 	let opener;
 	let lastOutside = document.body.ownerDocument.activeElement;
 	let pendingOpener;
+	let labelledHeading;
+	let headingSequence = 0;
 
 	const canFocus = ( element ) =>
 		element instanceof window.HTMLElement &&
@@ -38,6 +40,30 @@
 		}
 		if ( ! drawer ) {
 			return;
+		}
+		const heading = Array.from(
+			drawer.querySelectorAll( 'h1, h2, h3, [role="heading"]' )
+		).find( canFocus );
+		const labelledBy = drawer.getAttribute( 'aria-labelledby' );
+		if (
+			heading &&
+			! drawer.hasAttribute( 'aria-label' ) &&
+			( ! labelledBy || labelledBy === labelledHeading?.id )
+		) {
+			if ( ! heading.id ) {
+				do {
+					headingSequence++;
+				} while (
+					document.getElementById(
+						`wooblocks-cart-heading-${ headingSequence }`
+					)
+				);
+				heading.id = `wooblocks-cart-heading-${ headingSequence }`;
+			}
+			if ( labelledBy !== heading.id ) {
+				drawer.setAttribute( 'aria-labelledby', heading.id );
+			}
+			labelledHeading = heading;
 		}
 
 		const nowOpen = drawer.getAttribute( 'aria-hidden' ) === 'false';

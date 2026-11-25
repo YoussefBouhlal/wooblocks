@@ -120,7 +120,7 @@ $wooblocks_categories = taxonomy_exists( 'product_cat' ) ? get_terms(
 			echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 				array(
 					'label'          => __( 'Search', 'wooblocks' ),
-					'showLabel'      => false,
+					'showLabel'      => true,
 					'placeholder'    => __( 'Search', 'wooblocks' ),
 					'buttonText'     => __( 'Search', 'wooblocks' ),
 					'buttonUseIcon'  => true,
