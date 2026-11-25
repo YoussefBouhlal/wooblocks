@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 echo serialize_block_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core serializer escapes JSON for block comments.
 	array(
 		'label'         => __( 'Search', 'wooblocks' ),
+		'className'     => 'wooblocks-content-search',
 		'showLabel'     => true,
 		'buttonText'    => __( 'Search', 'wooblocks' ),
 		'buttonUseIcon' => true,
