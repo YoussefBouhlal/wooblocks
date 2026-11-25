@@ -43,6 +43,7 @@ function wooblocks_enqueue_cart_focus() {
 	wp_enqueue_script( 'wooblocks-cart-focus', get_template_directory_uri() . '/assets/js/cart-focus.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
 	if ( is_product() ) {
 		wp_enqueue_script( 'wooblocks-quantity-labels', get_template_directory_uri() . '/assets/js/quantity-labels.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
+		wp_enqueue_script( 'wooblocks-gallery-motion', get_template_directory_uri() . '/assets/js/gallery-motion.js', array( 'wc-single-product' ), $theme->get( 'Version' ), array( 'in_footer' => true ) );
 	}
 	if ( is_checkout() ) {
 		wp_enqueue_script( 'wooblocks-payment-accessibility', get_template_directory_uri() . '/assets/js/payment-accessibility.js', array(), $theme->get( 'Version' ), array( 'in_footer' => true ) );
