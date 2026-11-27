@@ -28,7 +28,11 @@ No pages, products, settings, menu records, coupons, or users are created by thi
 
 Editorial photography is not bundled. Hero, department, and story sections use editable Cover blocks with reserved space and no image URLs. They are intentionally unassigned. Select your licensed images in the editor, choose focal points, and check text contrast. Use informative alt text where the image adds content; decorative background photography can use empty alt text.
 
-The source fonts are Anton, Archivo, and Pinyon Script. Their files are not bundled. The theme declares matching font stacks with local fallbacks and makes no Google Fonts requests. To match the reference, add appropriately licensed font files through Styles > Typography > Font Library and assign them to headings, body text, and script accents. Uploading fonts is a separate site-editing action.
+Archivo (body text), Anton (headings), and Pinyon Script (script accents) are bundled locally as WOFF2 files and registered through `theme.json` for WordPress's frontend and editor font handling. No Font Library upload or Google Fonts request is required. Archivo includes normal and italic variable faces at weights 100-900; Anton and Pinyon Script include their regular 400 faces. The existing fallback stacks remain available. Merchant typography choices are not reset.
+
+All published Latin, Latin Extended, and Vietnamese subsets are included, with their publisher-provided Unicode ranges. This is not universal script coverage; unsupported characters use the fallback stack. `font-display: swap` keeps fallback text visible while the fonts load. No theme font preloads are added; browsers select faces and subsets as needed. The 12 font files total 314,212 bytes, not all of which are needed for a typical page.
+
+Font copyrights, upstream sources, and redistribution terms are recorded in readme.txt. Each family has its unmodified SIL Open Font License 1.1 notice under assets/fonts; assets/fonts/SOURCES.json records the download sources and SHA-256 hashes. The bundled fonts remain under the OFL, independently of the theme's GPL license. They are distributed without theme-specific modifications or renaming.
 
 ## Editable Storefront
 

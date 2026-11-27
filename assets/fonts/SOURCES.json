@@ -1,0 +1,93 @@
+{
+  "retrieved": "2026-11-27",
+  "stylesheet": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Anton&family=Pinyon+Script&display=swap",
+  "files": [
+    {
+      "file": "assets/fonts/archivo/archivo-normal-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2",
+      "sha256": "8f704806dbedeaaeca334b11ec348bc3ac3a439d6431544b3afb54f534ee4967",
+      "bytes": 34928
+    },
+    {
+      "file": "assets/fonts/archivo/archivo-normal-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2",
+      "sha256": "ff4f17d21930e36d6d93baba663e624cb767afc3feebf7adaebd82242638de05",
+      "bytes": 32608
+    },
+    {
+      "file": "assets/fonts/archivo/archivo-normal-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2",
+      "sha256": "5a621c5598a31392555104ccdc41a46c3104f1cc22666024a8afb881ca9adaab",
+      "bytes": 13240
+    },
+    {
+      "file": "assets/fonts/archivo/archivo-italic-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCxCmuA.woff2",
+      "sha256": "3d109f97a71d3d3d04d16e5c4b95be8f89146a55ebbed239b90f5a8c5d4f437a",
+      "bytes": 39156
+    },
+    {
+      "file": "assets/fonts/archivo/archivo-italic-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx6muLRm.woff2",
+      "sha256": "cbaf874ff231b0aba7c129e385be1f9949d63f9b51d8290898cbb3ce143dec3d",
+      "bytes": 35016
+    },
+    {
+      "file": "assets/fonts/archivo/archivo-italic-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3kBo8UDI-1M0wlSfdzyIEkpwTM29hr-8mTYCx-muLRm.woff2",
+      "sha256": "efebc815260e61bae56b99c04f6dd844b23d8b78e68425e498de5fcfd88085df",
+      "bytes": 14720
+    },
+    {
+      "file": "assets/fonts/anton/anton-normal-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2",
+      "sha256": "d0fa07ff63dd60cbc0e2f58e29c802dca2a5ae0276c999f59c6111ab7bbaec3b",
+      "bytes": 18612
+    },
+    {
+      "file": "assets/fonts/anton/anton-normal-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3K9-C8QSw.woff2",
+      "sha256": "0d17b7880f389deeb6663a52fa4eadc6d9116bdda725f0aa1f3d404fbb7d3d59",
+      "bytes": 31356
+    },
+    {
+      "file": "assets/fonts/anton/anton-normal-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3K8-C8QSw.woff2",
+      "sha256": "82cc85bd416dc825c05b4264a8a58e189e528fed8a05fbd471b5493e010d623b",
+      "bytes": 8680
+    },
+    {
+      "file": "assets/fonts/pinyon-script/pinyon-script-normal-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/pinyonscript/v24/6xKpdSJbL9-e9LuoeQiDRQR8WOXaOg.woff2",
+      "sha256": "3e1f69a201572cad4aabea7ccf720f093a7dbc005380b2a1b89e0b94476d3e42",
+      "bytes": 39044
+    },
+    {
+      "file": "assets/fonts/pinyon-script/pinyon-script-normal-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/pinyonscript/v24/6xKpdSJbL9-e9LuoeQiDRQR8WOvaOrbh.woff2",
+      "sha256": "c208ba67b4eff57e673bb188faeca3a51a6d928f8d94aca268b0a41a5deb6932",
+      "bytes": 36152
+    },
+    {
+      "file": "assets/fonts/pinyon-script/pinyon-script-normal-vietnamese.woff2",
+      "source": "https://fonts.gstatic.com/s/pinyonscript/v24/6xKpdSJbL9-e9LuoeQiDRQR8WOraOrbh.woff2",
+      "sha256": "7b21477143c6cfd96aedc8864390d5b1c92f2684012d3e6da9eaa0aa0f11135a",
+      "bytes": 10700
+    },
+    {
+      "file": "assets/fonts/archivo/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/95f4904fc8bcf26d3420fe315560c96417c6dec7/ofl/archivo/OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b"
+    },
+    {
+      "file": "assets/fonts/anton/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/95f4904fc8bcf26d3420fe315560c96417c6dec7/ofl/anton/OFL.txt",
+      "sha256": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4"
+    },
+    {
+      "file": "assets/fonts/pinyon-script/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/95f4904fc8bcf26d3420fe315560c96417c6dec7/ofl/pinyonscript/OFL.txt",
+      "sha256": "61d07cb0eaa943943648df2b11d0c2210e772053c192871e13f680b53fe0b77e"
+    }
+  ]
+}
