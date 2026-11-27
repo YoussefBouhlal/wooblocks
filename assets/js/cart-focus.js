@@ -107,4 +107,98 @@
 		attributeFilter: [ 'aria-hidden', 'hidden' ],
 	} );
 	reconcile();
+
+	const cart = document.querySelector( '.wp-block-woocommerce-cart' );
+	if ( ! cart ) {
+		return;
+	}
+	let pendingCartAction;
+	const decreaseSelector =
+		'.wc-block-components-quantity-selector__button--minus';
+	const removeSelector = '.wc-block-cart-item__remove-link';
+	const isRemovalTable = ( element ) =>
+		pendingCartAction?.control.matches( removeSelector ) &&
+		element.matches( '.wc-block-cart-items' ) &&
+		cart.contains( element );
+
+	document.addEventListener(
+		'click',
+		( event ) => {
+			pendingCartAction = null;
+			const control = event.target.closest(
+				`${ decreaseSelector }, ${ removeSelector }`
+			);
+			if (
+				! control ||
+				! cart.contains( control ) ||
+				control !== cart.ownerDocument.activeElement ||
+				( control.matches( removeSelector ) &&
+					cart.querySelectorAll( '.wc-block-cart-items__row' )
+						.length !== 1 )
+			) {
+				return;
+			}
+			const row = control.closest( '.wc-block-cart-items__row' );
+			pendingCartAction = {
+				control,
+				row,
+				value: row?.querySelector( 'input[type="number"]' )?.value,
+			};
+		},
+		true
+	);
+	document.addEventListener( 'keydown', () => {
+		pendingCartAction = null;
+	} );
+	document.addEventListener( 'focusin', ( event ) => {
+		if (
+			event.target !== pendingCartAction?.control &&
+			! isRemovalTable( event.target )
+		) {
+			pendingCartAction = null;
+		}
+	} );
+
+	new window.MutationObserver( () => {
+		if ( ! pendingCartAction ) {
+			return;
+		}
+		const { control, row, value } = pendingCartAction;
+		const active = cart.ownerDocument.activeElement;
+		if (
+			active !== document.body &&
+			active !== control &&
+			! isRemovalTable( active )
+		) {
+			pendingCartAction = null;
+			return;
+		}
+		let target;
+		if ( control.matches( decreaseSelector ) ) {
+			const quantity = row?.querySelector( 'input[type="number"]' );
+			if ( ! canFocus( quantity ) || quantity.value === value ) {
+				return;
+			}
+			pendingCartAction = null;
+			if ( control.disabled ) {
+				target = quantity;
+			}
+		} else if ( ! control.isConnected ) {
+			target = cart
+				.querySelector( '.wp-block-woocommerce-empty-cart-block' )
+				?.querySelector( 'h1, h2, h3, [role="heading"]' );
+			if ( canFocus( target ) && ! target.hasAttribute( 'tabindex' ) ) {
+				target.setAttribute( 'tabindex', '-1' );
+			}
+		}
+		if ( canFocus( target ) ) {
+			pendingCartAction = null;
+			target.focus();
+		}
+	} ).observe( cart, {
+		subtree: true,
+		childList: true,
+		attributes: true,
+		attributeFilter: [ 'disabled', 'value' ],
+	} );
 } )();

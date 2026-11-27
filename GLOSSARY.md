@@ -56,6 +56,10 @@ _Avoid_: Cart
 The outcome shown to the customer after an order is placed. It is not, by itself, proof that payment has settled.
 _Avoid_: Payment receipt
 
+**Customer account**:
+A shopper's registered identity with the store and its associated orders, addresses, and account details, distinct from an administrator account or a guest cart.
+_Avoid_: Administrator account, guest session
+
 **Post discussion**:
 The comments and replies associated with a blog post, distinct from reviews of a product.
 _Avoid_: Product reviews
